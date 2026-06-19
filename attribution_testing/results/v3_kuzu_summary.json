@@ -1,0 +1,45 @@
+{
+  "baseline": {
+    "n_trials": 10,
+    "session": {
+      "f1_mean": 0.3332330088721462,
+      "precision_mean": 0.2901415204262697,
+      "recall_mean": 0.39785407592062294,
+      "ari_mean": 0.0462350048630428
+    },
+    "mcp": {
+      "f1_mean": 0.8034904617939794,
+      "precision_mean": 0.8438371422127343,
+      "recall_mean": 0.7674327277032477,
+      "ari_mean": 0.942918909129542
+    },
+    "tool_call": {
+      "f1_mean": 0.0,
+      "precision_mean": 0.0,
+      "recall_mean": 0.0,
+      "ari_mean": 1.0
+    }
+  },
+  "cohesion": {
+    "n_trials": 10,
+    "session": {
+      "f1_mean": 0.3332844344631575,
+      "precision_mean": 0.2902068014726847,
+      "recall_mean": 0.39788491197227727,
+      "ari_mean": 0.046323886157900625
+    },
+    "mcp": {
+      "f1_mean": 0.8034904617939794,
+      "precision_mean": 0.8438371422127343,
+      "recall_mean": 0.7674327277032477,
+      "ari_mean": 0.942918909129542
+    },
+    "tool_call": {
+      "f1_mean": 0.0,
+      "precision_mean": 0.0,
+      "recall_mean": 0.0,
+      "ari_mean": 1.0
+    }
+  },
+  "threshold": 0.001
+}

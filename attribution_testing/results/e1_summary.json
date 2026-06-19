@@ -1,0 +1,24 @@
+{
+  "n_sessions": 50,
+  "n_with_l1": 50,
+  "l2ext": {
+    "n": 50,
+    "subprocess_recall_mean": 0.9994871794871795,
+    "subprocess_recall_p50": 1.0,
+    "subprocess_recall_p10": 1.0,
+    "edge_recall_mean": 0.850261828546473,
+    "edge_recall_p50": 1.0,
+    "claude_root_pct": 0.0,
+    "claude_anywhere_pct": 1.0
+  },
+  "l3": {
+    "n": 50,
+    "subprocess_recall_mean": 1.0,
+    "subprocess_recall_p50": 1.0,
+    "subprocess_recall_p10": 1.0,
+    "edge_recall_mean": 0.9984126984126984,
+    "edge_recall_p50": 1.0,
+    "claude_root_pct": 0.0,
+    "claude_anywhere_pct": 1.0
+  }
+}

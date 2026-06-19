@@ -1,0 +1,60 @@
+{
+  "l2ext": {
+    "n_trials": 10,
+    "total_dropped": 11369,
+    "total_kept": 44072,
+    "session": {
+      "f1_mean": 1.0,
+      "f1_min": 1.0,
+      "f1_max": 1.0,
+      "precision_mean": 1.0,
+      "recall_mean": 1.0,
+      "ari_mean": 1.0
+    },
+    "mcp": {
+      "f1_mean": 0.7972237288147614,
+      "f1_min": 0.0,
+      "f1_max": 0.9965556831228473,
+      "precision_mean": 0.8,
+      "recall_mean": 0.7944666608854487,
+      "ari_mean": 0.21594414470407836
+    },
+    "tool_call": {
+      "f1_mean": 0.48628132290905457,
+      "f1_min": 0.0,
+      "f1_max": 0.8571428571428571,
+      "precision_mean": 0.6854833388320686,
+      "recall_mean": 0.38641141992815276,
+      "ari_mean": 0.02462300318884817
+    }
+  },
+  "l3": {
+    "n_trials": 10,
+    "total_dropped": 11429,
+    "total_kept": 45953,
+    "session": {
+      "f1_mean": 1.0,
+      "f1_min": 1.0,
+      "f1_max": 1.0,
+      "precision_mean": 1.0,
+      "recall_mean": 1.0,
+      "ari_mean": 1.0
+    },
+    "mcp": {
+      "f1_mean": 0.7972237288147614,
+      "f1_min": 0.0,
+      "f1_max": 0.9965556831228473,
+      "precision_mean": 0.8,
+      "recall_mean": 0.7944666608854487,
+      "ari_mean": 0.21416834372129756
+    },
+    "tool_call": {
+      "f1_mean": 0.497582059153222,
+      "f1_min": 0.0,
+      "f1_max": 1.0,
+      "precision_mean": 0.6935504618815875,
+      "recall_mean": 0.39889743931374094,
+      "ari_mean": 0.028129245780116517
+    }
+  }
+}

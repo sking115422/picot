@@ -1,0 +1,50 @@
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 5, "natural_overlap_pairs": 1, "natural_pair_count": 10, "synth_disjoint": 0, "synth_overlap_count": 4, "synth_disjoint_rate": 0.0}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 6, "natural_overlap_pairs": 1, "natural_pair_count": 15, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 1, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 4, "natural_overlap_pairs": 1, "natural_pair_count": 6, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 0, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "benign", "n_calls": 1}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 1, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 1, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 6, "natural_overlap_pairs": 0, "natural_pair_count": 15, "synth_disjoint": 0, "synth_overlap_count": 5, "synth_disjoint_rate": 0.0}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 4, "natural_overlap_pairs": 1, "natural_pair_count": 6, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 1, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "benign", "n_calls": 1}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 0, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 7, "natural_overlap_pairs": 2, "natural_pair_count": 21, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 3, "natural_overlap_pairs": 1, "natural_pair_count": 3, "synth_disjoint": 0, "synth_overlap_count": 2, "synth_disjoint_rate": 0.0}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 3, "natural_overlap_pairs": 1, "natural_pair_count": 3, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 1, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 1, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "malicious-puppeteer_url_logger", "n_calls": 1}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 4, "natural_overlap_pairs": 1, "natural_pair_count": 6, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 1, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 1, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 1, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 1, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 6, "natural_overlap_pairs": 0, "natural_pair_count": 15, "synth_disjoint": 0, "synth_overlap_count": 5, "synth_disjoint_rate": 0.0}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 3, "natural_overlap_pairs": 1, "natural_pair_count": 3, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 3, "natural_overlap_pairs": 1, "natural_pair_count": 3, "synth_disjoint": 0, "synth_overlap_count": 2, "synth_disjoint_rate": 0.0}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 1, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 0, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 3, "natural_overlap_pairs": 0, "natural_pair_count": 3, "synth_disjoint": 0, "synth_overlap_count": 0, "synth_disjoint_rate": null}
+{"session": "malicious-puppeteer_url_logger", "n_calls": 1}
+{"session": "benign", "n_calls": 1}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 1, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 0, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 0, "synth_disjoint_rate": null}
+{"session": "malicious-puppeteer_url_logger", "n_calls": 0}
+{"session": "benign", "n_calls": 0}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 4, "natural_overlap_pairs": 0, "natural_pair_count": 6, "synth_disjoint": 0, "synth_overlap_count": 3, "synth_disjoint_rate": 0.0}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 4, "natural_overlap_pairs": 0, "natural_pair_count": 6, "synth_disjoint": 0, "synth_overlap_count": 0, "synth_disjoint_rate": null}
+{"session": "malicious-puppeteer_url_logger", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 3, "natural_overlap_pairs": 0, "natural_pair_count": 3, "synth_disjoint": 0, "synth_overlap_count": 2, "synth_disjoint_rate": 0.0}
+{"session": "benign", "mcp": "anthropic_ref_servers/puppeteer", "n_mcp_calls": 2, "natural_overlap_pairs": 1, "natural_pair_count": 1, "synth_disjoint": 0, "synth_overlap_count": 1, "synth_disjoint_rate": 0.0}
+{"session": "benign", "n_calls": 1}
+{"session": "malicious-postgres_query_logger", "n_calls": 1}
+{"session": "benign", "n_calls": 1}
+{"session": "malicious-postgres_query_logger", "n_calls": 1}
+{"session": "benign", "n_calls": 1}
+{"session": "malicious-postgres_query_logger", "n_calls": 1}
+{"session": "benign", "n_calls": 1}
+{"session": "malicious-postgres_query_logger", "n_calls": 1}
+{"session": "benign", "mcp": "anthropic_ref_servers/postgres", "n_mcp_calls": 4, "natural_overlap_pairs": 3, "natural_pair_count": 6, "synth_disjoint": 0, "synth_overlap_count": 0, "synth_disjoint_rate": null}
+{"session": "malicious-postgres_query_logger", "n_calls": 1}

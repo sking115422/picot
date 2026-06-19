@@ -1,0 +1,8 @@
+{
+  "n_sessions": 50,
+  "total_tool_calls": 120,
+  "ambiguous_calls_pct": 0.008333333333333333,
+  "no_mcp_pid_calls_pct": 0.225,
+  "n_pids_in_mcp_p50": 1,
+  "n_pids_in_mcp_p95": 1
+}

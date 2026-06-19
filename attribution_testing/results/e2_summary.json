@@ -1,0 +1,134 @@
+{
+  "l2ext": {
+    "n_sessions": 50,
+    "total_bridged_subprocesses": 1485,
+    "by_event": {
+      "bind": {
+        "l1_total": 77,
+        "host_total": 0,
+        "host_over_l1": 0.0
+      },
+      "clone": {
+        "l1_total": 4037,
+        "host_total": 4259,
+        "host_over_l1": 1.05499133019569
+      },
+      "clone3": {
+        "l1_total": 2822,
+        "host_total": 0,
+        "host_over_l1": 0.0
+      },
+      "connect": {
+        "l1_total": 646,
+        "host_total": 0,
+        "host_over_l1": 0.0
+      },
+      "execve": {
+        "l1_total": 3625,
+        "host_total": 3625,
+        "host_over_l1": 1.0
+      },
+      "exit_group": {
+        "l1_total": 1436,
+        "host_total": 0,
+        "host_over_l1": 0.0
+      },
+      "open": {
+        "l1_total": 300,
+        "host_total": 0,
+        "host_over_l1": 0.0
+      },
+      "openat": {
+        "l1_total": 109380,
+        "host_total": 320713,
+        "host_over_l1": 2.932099104040958
+      },
+      "recvfrom": {
+        "l1_total": 1712,
+        "host_total": 0,
+        "host_over_l1": 0.0
+      },
+      "sendto": {
+        "l1_total": 449,
+        "host_total": 3888,
+        "host_over_l1": 8.659242761692651
+      },
+      "unlink": {
+        "l1_total": 172,
+        "host_total": 0,
+        "host_over_l1": 0.0
+      },
+      "unlinkat": {
+        "l1_total": 83,
+        "host_total": 83,
+        "host_over_l1": 1.0
+      }
+    }
+  },
+  "l3": {
+    "n_sessions": 50,
+    "total_bridged_subprocesses": 1486,
+    "by_event": {
+      "bind": {
+        "l1_total": 77,
+        "host_total": 0,
+        "host_over_l1": 0.0
+      },
+      "clone": {
+        "l1_total": 4048,
+        "host_total": 4270,
+        "host_over_l1": 1.0548418972332017
+      },
+      "clone3": {
+        "l1_total": 2833,
+        "host_total": 0,
+        "host_over_l1": 0.0
+      },
+      "connect": {
+        "l1_total": 646,
+        "host_total": 5195,
+        "host_over_l1": 8.041795665634675
+      },
+      "execve": {
+        "l1_total": 3628,
+        "host_total": 3628,
+        "host_over_l1": 1.0
+      },
+      "exit_group": {
+        "l1_total": 1436,
+        "host_total": 1436,
+        "host_over_l1": 1.0
+      },
+      "open": {
+        "l1_total": 300,
+        "host_total": 0,
+        "host_over_l1": 0.0
+      },
+      "openat": {
+        "l1_total": 109823,
+        "host_total": 321482,
+        "host_over_l1": 2.927273886162279
+      },
+      "recvfrom": {
+        "l1_total": 1712,
+        "host_total": 0,
+        "host_over_l1": 0.0
+      },
+      "sendto": {
+        "l1_total": 449,
+        "host_total": 3889,
+        "host_over_l1": 8.661469933184856
+      },
+      "unlink": {
+        "l1_total": 172,
+        "host_total": 0,
+        "host_over_l1": 0.0
+      },
+      "unlinkat": {
+        "l1_total": 83,
+        "host_total": 83,
+        "host_over_l1": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "l2ext": {
+    "n_trials": 5,
+    "ari_cgroup_baseline_mean": 0.0,
+    "ari_agent_root_mean": 0.9023253193809774,
+    "ari_agent_root_min": 0.8401961224093525,
+    "ari_agent_root_max": 0.954139178388711
+  },
+  "l3": {
+    "n_trials": 5,
+    "ari_cgroup_baseline_mean": 0.0,
+    "ari_agent_root_mean": 0.901863779013244,
+    "ari_agent_root_min": 0.8397971390525448,
+    "ari_agent_root_max": 0.9541086531140642
+  }
+}

@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# Virtual envs
+.venv/
+venv/
+
+# Logs
+*.log
+
+# Local secrets / scratch / runtime state
+*bedrock_env*
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Captured corpora — large, regenerable from cle4as captures via
+# attribution_testing/v3_bare_host_capture*.py. Leaving them out of git
+# keeps the repo small; rebuild by re-running the capture script.
+/attribution_testing/v3_captures/
+/attribution_testing/v3_captures_hooks/
+/attribution_testing/v3_captures_v2/
+
+# Kuzu graph databases — 5+ GB, deterministically rebuilt by the graph
+# builder + scoring scripts from the captures above. Never commit.
+/attribution_testing/kuzu_graphs/
+
+# Per-run scratch outputs from scorers
+/attribution_testing/results/*.tmp.*
+/attribution_testing/__pycache__/
+
+# C / libbpf build outputs (we don't build sensors here, but keep
+# guardrails in case sensors get vendored in)
+*.o
+*.a
+*.so
+*.bpf.o
+*.skel.h
+build/
+target/
+*.rlib
+*.rmeta
+
+# bpftrace runtime
+*.bt.tmp

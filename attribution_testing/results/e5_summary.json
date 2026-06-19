@@ -1,0 +1,8 @@
+{
+  "n_sessions_examined": 50,
+  "n_sessions_with_overlapping_pairs": 30,
+  "synth_overlap_pairs_total": 46,
+  "synth_disjoint_total": 0,
+  "synth_disjoint_rate": 0.0,
+  "natural_overlap_pairs_total": 27
+}
