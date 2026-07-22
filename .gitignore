@@ -1,48 +1,36 @@
-# Python
+# ============================================================
+# picot .gitignore
+# ============================================================
+# Rule of thumb: track source code, small config, and findings.
+# Ignore large regenerable artefacts (corpora, LLM outputs, evaluations).
+
+# ---- Python ----
 __pycache__/
 *.pyc
 *.pyo
 *.egg-info/
 .pytest_cache/
+.mypy_cache/
 
-# Virtual envs
+# ---- Virtual envs ----
 .venv/
 venv/
 
-# Logs
+# ---- Logs / scratch ----
 *.log
-
-# Local secrets / scratch / runtime state
+*.tmp
 *bedrock_env*
 .env
 .env.local
 
-# OS
+# ---- OS / IDE ----
 .DS_Store
 Thumbs.db
-
-# IDE
 .vscode/
 .idea/
 *.swp
 
-# Captured corpora — large, regenerable from cle4as captures via
-# attribution_testing/v3_bare_host_capture*.py. Leaving them out of git
-# keeps the repo small; rebuild by re-running the capture script.
-/attribution_testing/v3_captures/
-/attribution_testing/v3_captures_hooks/
-/attribution_testing/v3_captures_v2/
-
-# Kuzu graph databases — 5+ GB, deterministically rebuilt by the graph
-# builder + scoring scripts from the captures above. Never commit.
-/attribution_testing/kuzu_graphs/
-
-# Per-run scratch outputs from scorers
-/attribution_testing/results/*.tmp.*
-/attribution_testing/__pycache__/
-
-# C / libbpf build outputs (we don't build sensors here, but keep
-# guardrails in case sensors get vendored in)
+# ---- Build outputs ----
 *.o
 *.a
 *.so
@@ -52,6 +40,55 @@ build/
 target/
 *.rlib
 *.rmeta
-
-# bpftrace runtime
 *.bt.tmp
+
+
+# ============================================================
+# data/ — regenerable corpus snapshots
+# ============================================================
+# picot/data/ace_full/ is a 16 GB copy of cle4as_int/data/sessions_ace_full/
+# plus corpus metadata. Regenerable via rsync from cle4as_int. Never commit.
+data/
+experiments/envelope_pilot/results/
+experiments/envelope_pilot/ace_full/results/
+experiments/envelope_pilot/ace_full/full_corpus
+*selected_*.json
+examples.json
+
+# ============================================================
+# experiments/ — track source, ignore heavy outputs
+# ============================================================
+
+# --- attribution_testing (older work) ---
+# Captured trace corpora, regenerable via v3_bare_host_capture*.py
+/attribution_testing/v3_captures/
+/attribution_testing/v3_captures_hooks/
+/attribution_testing/v3_captures_v2/
+# Kuzu graph databases — 5+ GB, rebuild from captures
+/attribution_testing/kuzu_graphs/
+# Per-run scratch outputs
+/attribution_testing/results/*.tmp.*
+
+# --- layer1_discrepancy (host-vs-container diagnostic) ---
+# Session captures (strace + host bpftrace outputs) — regenerable
+/experiments/layer1_discrepancy/captures/
+# Compiled build artefacts if any
+/experiments/layer1_discrepancy/docker/*.tar
+
+# --- envelope_pilot ---
+# Every run's per-envelope + per-eval JSONs are large and regenerable.
+# Keep the small artefacts (system prompt, findings, selection lists)
+# so the paper trail is reproducible without the bulk.
+#
+# Under each run_*/ dir:
+#   envelopes/           — one JSON per key, LLM-generated (regeneratable)
+#   evaluation_*.json    — computed from envelopes + traces (regeneratable)
+#   system_prompt.txt    — TRACKED (documents what was asked)
+/experiments/envelope_pilot/results/run_*/envelopes/
+/experiments/envelope_pilot/results/run_*/evaluation*.json
+/experiments/envelope_pilot/ace_full/results/run_*/envelopes/
+/experiments/envelope_pilot/ace_full/results/run_*/evaluation*.json
+
+# Smoke-test scratch dirs / intermediate selection files
+/experiments/envelope_pilot/ace_full/selected_ace_c_smoke.json
+/tmp_ace_bi_smoke*.json

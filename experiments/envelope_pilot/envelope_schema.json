@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Agent syscall envelope",
+  "description": "Semantic-capability envelope predicted from an LLM prompt + MCP tool schemas. Compiled into per-syscall checks at enforcement time.",
+  "type": "object",
+  "properties": {
+    "rationale": {
+      "type": "string",
+      "description": "One-sentence explanation of what the agent is expected to do to satisfy the prompt, in the envelope's terms."
+    },
+    "file_ops": {
+      "type": "object",
+      "properties": {
+        "read_paths": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Glob patterns for paths the agent may READ. Support: absolute paths, `**` (recursive wildcard), `*` (single segment)."
+        },
+        "write_paths": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Glob patterns for paths the agent may WRITE / CREATE."
+        },
+        "delete_paths": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Glob patterns for paths the agent may DELETE (unlink)."
+        }
+      }
+    },
+    "network": {
+      "type": "object",
+      "properties": {
+        "allow_egress": {
+          "type": "boolean",
+          "description": "May the agent make any outbound network connect() at all?"
+        },
+        "allow_hosts": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Hostnames, IPs, or CIDRs the agent may connect() to. Reserved for future use — current L3 sensor does not carry destination address in connect() events."
+        },
+        "allow_ports": {
+          "type": "array",
+          "items": {"type": "integer"},
+          "description": "Destination TCP/UDP ports the agent may connect() to. Reserved as above."
+        }
+      }
+    },
+    "process": {
+      "type": "object",
+      "properties": {
+        "allow_spawn": {
+          "type": "boolean",
+          "description": "May the agent execve() any child process at all?"
+        },
+        "allow_binaries": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Absolute paths or basenames of binaries the agent may execve(). E.g. `/usr/bin/git` or `git`."
+        }
+      }
+    }
+  },
+  "required": ["rationale", "file_ops", "network", "process"]
+}

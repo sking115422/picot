@@ -1,0 +1,52 @@
+#!/usr/bin/env bpftrace
+/*
+ * host_wildcard_trace.bt — v2, cgroup-filtered.
+ *
+ * Wildcard host-side syscall capture for the Layer 1 discrepancy
+ * diagnostic. Attaches to tracepoint:raw_syscalls:sys_enter and emits
+ * one line per syscall entry whose task cgroup id matches the target.
+ *
+ * Cgroup v2 inheritance means every descendant of the container's
+ * root cgroup shares the same cgroup id — so this filter naturally
+ * captures the container's full process subtree without any userspace
+ * pid bookkeeping. Traffic outside the container is dropped in-kernel,
+ * which keeps ring-buffer volume ~1000-10000x lower.
+ *
+ * Usage:
+ *   bpftrace -B full host_wildcard_trace.bt <target_cgroup_id>
+ *
+ * $1 is the target cgroup id (integer). The launcher extracts it from
+ * /sys/fs/cgroup/<path>/cgroup.controllers or from bpf_get_cgroup_id
+ * on the container path.
+ *
+ * bpftrace built-ins used:
+ *   cgroup = bpf_get_current_cgroup_id()  (task's current v2 cgroup id)
+ *   pid    = TGID
+ *   tid    = kernel task pid (thread id)
+ *   comm   = task name (16 bytes)
+ *
+ * Output format:
+ *   BOOT|nsecs=<n>                                    (once at start)
+ *   TARGET|cgroup=<id>                                (once at start)
+ *   T|<nsecs>|<syscall_nr>|<tgid>|<tid>|<comm>        (per syscall entry)
+ *   F|<nsecs>|<parent_pid>|<child_pid>|<child_comm>   (per fork inside subtree)
+ *   END|nsecs=<n>                                     (at exit)
+ */
+
+BEGIN {
+    printf("BOOT|nsecs=%lld\n", nsecs);
+    printf("TARGET|cgroup=%lld\n", $1);
+    printf("HEADER|T|nsecs|syscall_nr|tgid|tid|comm\n");
+}
+
+tracepoint:raw_syscalls:sys_enter /cgroup == $1/ {
+    printf("T|%lld|%d|%d|%d|%s\n", nsecs, args->id, pid, tid, comm);
+}
+
+tracepoint:sched:sched_process_fork /cgroup == $1/ {
+    printf("F|%lld|%d|%d|%s\n", nsecs, args->parent_pid, args->child_pid, str(args->child_comm));
+}
+
+END {
+    printf("END|nsecs=%lld\n", nsecs);
+}
