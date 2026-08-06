@@ -20,6 +20,8 @@ from generate_envelopes import (
     load_prompt_text,
     load_mcp_tools_from_stream,
     read_bearer_token,
+    resolve_model_id,
+    DEFAULT_MODEL_ID,
 )
 
 
@@ -27,23 +29,29 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--keys", type=Path,
                     default=Path(__file__).parent / "full_corpus" / "envelope_keys.json")
-    ap.add_argument("--style", choices=["v1", "v5"], default="v5")
+    ap.add_argument("--style", choices=["v1", "v5", "v7"], default="v5")
+    ap.add_argument("--model", default="opus",
+                    help="Bedrock model alias (opus/sonnet/haiku) or full model id")
     ap.add_argument("--resume", action="store_true",
                     help="Skip keys already present in output dir")
     ap.add_argument("--out-dir", type=Path, default=None)
     args = ap.parse_args()
 
+    model_id = resolve_model_id(args.model)
+    model_tag = args.model.replace("/", "_").replace(".", "")
+
     keys = json.loads(args.keys.read_text())
-    run_id = dt.datetime.now().strftime("%Y%m%d_%H%M%S") + f"_full_{args.style}"
+    run_id = dt.datetime.now().strftime("%Y%m%d_%H%M%S") + f"_full_{args.style}_{model_tag}"
     out_dir = args.out_dir or (Path(__file__).parent / "results" / f"run_{run_id}" / "envelopes")
     out_dir.mkdir(parents=True, exist_ok=True)
 
     system_prompt = build_system_prompt(args.style)
     (out_dir.parent / "system_prompt.txt").write_text(system_prompt)
+    (out_dir.parent / "model_id.txt").write_text(model_id + "\n")
 
     _, ts = read_bearer_token()
     print(f"Bedrock bearer token loaded — timestamp {ts}")
-    print(f"style: {args.style}  n keys: {len(keys)}")
+    print(f"style: {args.style}  model: {model_id}  n keys: {len(keys)}")
     print(f"out: {out_dir}")
 
     def key_filename(k: dict) -> str:
@@ -77,7 +85,7 @@ def main() -> int:
 
         print(f"[{i}/{len(keys)}] {mcp[:40]:<40s} {prompt_slug[:30]:<30s}")
         try:
-            resp = call_bedrock(system_prompt, user_msg)
+            resp = call_bedrock(system_prompt, user_msg, model_id=model_id)
             envelope = extract_envelope_json(resp)
         except Exception as e:
             print(f"    ERROR: {e}")

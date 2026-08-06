@@ -92,3 +92,29 @@ examples.json
 # Smoke-test scratch dirs / intermediate selection files
 /experiments/envelope_pilot/ace_full/selected_ace_c_smoke.json
 /tmp_ace_bi_smoke*.json
+
+# --- enforcement/baselines ---
+# Each *_envelope_dir/ is 446 auto-generated JSONs (one per envelope
+# key). They're built from small sources:
+#   null_envelope_dir/       from null_envelope.json + master key list
+#   heuristic_envelope_dir/  from a rule fn + master key list
+#   misaligned_envelope_dir/ from Opus envelope dir + shuffle seed 42
+# Track the sources, not the 1338 generated outputs.
+/experiments/enforcement/baselines/*_envelope_dir/
+
+# --- enforcement/results ---
+# batch_replay + benign-coverage outputs (~2 MB each, ~35 files).
+# Regen from envelope dirs + session_pairs.json by rerunning
+# orchestrator/batch_replay.py. Headline numbers stay in AUDIT_FINDINGS.md.
+/experiments/enforcement/results/
+
+# --- enforcement/supervisor build artefacts ---
+# Compiled binaries from `make`; rebuild locally.
+/experiments/enforcement/supervisor/envelope_supervisor
+/experiments/enforcement/supervisor/hello_supervisor
+/experiments/enforcement/supervisor/test_policy
+# Smoke-test envelope from Phase 2d
+/experiments/enforcement/supervisor/test_envelope_2d.json
+
+# --- enforcement/baselines source files not for tracking ---
+/experiments/enforcement/baselines/null_envelope.json
