@@ -9,6 +9,12 @@ tool call. The longer-term goal is intent-conditioned OS-layer
 prediction as the basis of an allow/block system for LLM agents;
 the current focus is establishing reliable attribution.
 
+The current intent-conditioned follow-on lives in `intent_effects/`. It builds
+a PICOT-local, prompt-aware manifest and semantic OS-effect view over the full
+4,047-session ACE snapshot without modifying the CLE4AS/ke4as projects. See
+[`docs/plan/ace_intent_reuse_protocol_v1.md`](docs/plan/ace_intent_reuse_protocol_v1.md)
+for the corrected data strategy and feasibility protocol.
+
 ## Status
 
 See [docs/2026-06-15_state_of_the_work.md](docs/2026-06-15_state_of_the_work.md)

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://picot.local/schemas/manifest_record_v1.schema.json",
+  "title": "PICOT ACE intent manifest record v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "session_id",
+    "subcorpus",
+    "delivery_vector",
+    "prompt_slug",
+    "variant",
+    "security_evaluation_role",
+    "agent",
+    "grouping",
+    "artifacts",
+    "source_read_only"
+  ],
+  "properties": {
+    "schema_version": {"const": "picot.ace-intent-manifest.v1"},
+    "session_id": {"type": "string", "minLength": 1},
+    "subcorpus": {"enum": ["ace_mcp", "ace_builtin", "ace_unknown"]},
+    "delivery_vector": {"type": "string"},
+    "prompt_slug": {"type": "string"},
+    "prompt_text": {"type": ["string", "null"]},
+    "prompt_sha256": {"type": ["string", "null"]},
+    "variant": {"type": "string"},
+    "gold_label": {"type": ["string", "null"]},
+    "security_evaluation_role": {"type": "string"},
+    "capture_succeeded": {"type": "boolean"},
+    "benign_calibration_candidate": {"type": "boolean"},
+    "source_read_only": {"const": true},
+    "agent": {
+      "type": "object",
+      "required": ["model", "harness", "cwd", "tools"]
+    },
+    "grouping": {
+      "type": "object",
+      "required": [
+        "environment_group_id",
+        "task_group_id",
+        "repeat_group_id",
+        "task_group_session_count",
+        "has_benign_malicious_pair",
+        "exact_repeat_count"
+      ]
+    },
+    "artifacts": {
+      "type": "object",
+      "required": ["session_dir", "session_json", "stream_jsonl", "strace_log"]
+    }
+  },
+  "additionalProperties": true
+}
+

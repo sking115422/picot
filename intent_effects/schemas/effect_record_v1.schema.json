@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://picot.local/schemas/effect_record_v1.schema.json",
+  "title": "PICOT semantic OS effect session record v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "session_id",
+    "subcorpus",
+    "delivery_vector",
+    "variant",
+    "grouping",
+    "statistics",
+    "effects"
+  ],
+  "properties": {
+    "schema_version": {"const": "picot.semantic-effects.v1"},
+    "session_id": {"type": "string", "minLength": 1},
+    "subcorpus": {"type": "string"},
+    "delivery_vector": {"type": "string"},
+    "variant": {"type": "string"},
+    "statistics": {"type": "object"},
+    "effects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "family",
+          "verb",
+          "resource",
+          "semantic_class",
+          "role_hint",
+          "risk",
+          "count",
+          "success_count",
+          "failure_count"
+        ],
+        "properties": {
+          "family": {"enum": ["file", "process", "network"]},
+          "verb": {"type": "string"},
+          "resource": {"type": "string"},
+          "semantic_class": {"type": "string"},
+          "role_hint": {
+            "enum": ["task_facing", "runtime_dependency", "task_or_runtime", "sensitive", "unknown"]
+          },
+          "risk": {"enum": ["low", "medium", "high", "critical"]},
+          "count": {"type": "integer", "minimum": 1},
+          "success_count": {"type": "integer", "minimum": 0},
+          "failure_count": {"type": "integer", "minimum": 0}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
+
